@@ -4,7 +4,7 @@ pipeline {
     stage ('Build') {
       steps {
         echo 'Preparing Build'
-        sh 'sudo yum install -y nginx'
+        sh 'sudo amazon-linux-extras install -y nginx1'
         git branch: 'main', url: 'https://github.com/omarsharif22/myHTML.git'
         sh 'pwd'
         sh 'sudo rm -rf /usr/share/nginx/html/index.html'
