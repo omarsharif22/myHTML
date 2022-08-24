@@ -15,7 +15,6 @@ pipeline {
         echo 'Deploying Website'
         sh 'sudo cp /var/lib/jenkins/workspace/website_main/index.html /usr/share/nginx/html'
         sh 'sudo systemctl start nginx'
-        echo 'success'
       }
     }      
   }
