@@ -4,8 +4,7 @@ pipeline {
     stage ('Build') {
       steps {
         echo 'Preparing Build'
-        sh 'sudo amazon-linux-extras install nginx1'
-        sh 'sudo systemctl start nginx'
+        sh 'sudo yum install -y nginx'
         git branch: 'main', url: 'https://github.com/omarsharif22/myHTML.git'
         sh 'pwd'
         sh 'sudo rm -rf /usr/share/nginx/html/index.html'
@@ -15,6 +14,7 @@ pipeline {
       steps {
         echo 'Deploying Website'
         sh 'sudo cp /var/lib/jenkins/workspace/website_main/index.html /usr/share/nginx/html'
+        sh 'sudo systemctl start nginx'        
       }
     }      
   }
