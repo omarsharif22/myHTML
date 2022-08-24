@@ -14,7 +14,7 @@ pipeline {
     stage ('Deploy') {
       steps {
         echo 'Deploying Website'
-        sh 'sudo cp /var/lib/jenkins/workspace/html_main/index.html /usr/share/nginx/html'
+        sh 'sudo cp /var/lib/jenkins/workspace/website_main/index.html /usr/share/nginx/html'
       }
     }      
   }
